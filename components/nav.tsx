@@ -5,7 +5,6 @@ import Image from 'next/image'
 import clsx from 'clsx';
 
 import ModeToggle from "@/components/ThemeToggle";
-import LanguageSelector from "@/components/lang-selector";
 
 import {
     HoverCard,
@@ -29,8 +28,10 @@ import {
     AcademicCapIcon,
     UserGroupIcon,
     BriefcaseIcon,
+    ArrowLongRightIcon,
 } from '@heroicons/react/24/outline'
 import { ChevronDownIcon, PhoneIcon, PlayCircleIcon } from '@heroicons/react/20/solid'
+import { Button } from './ui/button';
 
 const navigation = [
     {
@@ -91,19 +92,19 @@ export default function Nav({ getLanguage, locale, i18n }: any) {
 
     return (
         <header>
-            <div className='w-full fixed top-0 bg-white/50 dark:bg-slate-800/50 shadow z-50 backdrop-blur'>
+            <div className='w-full fixed top-0 bg-white dark:bg-slate-800 md:bg-white/50 md:dark:bg-slate-800/50 shadow z-50 md:backdrop-blur'>
                 <nav className="container flex items-center justify-between py-4 " aria-label="Global">
                     <a className="flex lg:flex-1" href='/'>
                         <div>
-                            <span className="sr-only">Comité Español de Automática</span>
-                            <Image className="h-9 w-auto" src="/img/logos/logo.png" alt="" height={36} width={36} />
+                            <span className="sr-only">Federación Asturiana de Tiro con Arco</span>
+                            <Image className="h-11 w-auto" src="/img/logos/logo.png" alt="" height={40} width={40} />
                         </div>
-                        <div className='ms-2'>
+                        <div className='ms-2 mt-2'>
                             <div className="leading-4">
-                                Comite Español
+                            Federación Asturiana 
                             </div>
                             <div className="leading-4">
-                                de <b>Automática</b>
+                            de Tiro con Arco
                             </div>
                         </div>
                     </a>
@@ -185,7 +186,7 @@ export default function Nav({ getLanguage, locale, i18n }: any) {
                             <ModeToggle />
                         </div>
                         <div className='ms-2'>
-                            <LanguageSelector selectedLang={locale} langs={i18n.locales} langsNames={i18n.localesNames} />
+                            <Button size="sm" variant="outline">Portal del federado <ArrowLongRightIcon className="w-5 ms-1"/> </Button>
                         </div>
 
                     </div>
@@ -266,7 +267,7 @@ export default function Nav({ getLanguage, locale, i18n }: any) {
                             </div>
                             <div className="py-6 flex">
                                 <div>
-                                    <LanguageSelector selectedLang={locale} langs={i18n.locales} langsNames={i18n.localesNames} />
+                                    {/* <LanguageSelector selectedLang={locale} langs={i18n.locales} langsNames={i18n.localesNames} /> */}
                                 </div>
                                 <div className='ms-2'>
                                     <ModeToggle />
