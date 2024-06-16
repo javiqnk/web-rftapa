@@ -86,13 +86,13 @@ function classNames(...classes: any[]) {
     return classes.filter(Boolean).join(' ')
 }
 
-export default function Nav({ getLanguage, locale, i18n }: any) {
+export default function Nav() {
 
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
     return (
         <header>
-            <div className='w-full fixed top-0 bg-white dark:bg-slate-800 md:bg-white/50 md:dark:bg-slate-800/50 shadow z-50 md:backdrop-blur'>
+            <div className='w-full fixed top-0 bg-white dark:bg-slate-800 md:bg-white/80 md:dark:bg-slate-800/80 shadow z-50 md:backdrop-blur'>
                 <nav className="container flex items-center justify-between py-4 " aria-label="Global">
                     <a className="flex lg:flex-1" href='/'>
                         <div>
@@ -101,10 +101,10 @@ export default function Nav({ getLanguage, locale, i18n }: any) {
                         </div>
                         <div className='ms-2 mt-2'>
                             <div className="leading-4">
-                            Federación Asturiana 
+                                Federación Asturiana
                             </div>
                             <div className="leading-4">
-                            de Tiro con Arco
+                                de Tiro con Arco
                             </div>
                         </div>
                     </a>
@@ -186,7 +186,9 @@ export default function Nav({ getLanguage, locale, i18n }: any) {
                             <ModeToggle />
                         </div>
                         <div className='ms-2'>
-                            <Button size="sm" variant="outline">Portal del federado <ArrowLongRightIcon className="w-5 ms-1"/> </Button>
+                            <Link target='_blank' href="https://federados.rfeta.es/acceder/">
+                                <Button size="sm" variant="outline">Portal del federado <ArrowLongRightIcon className="w-5 ms-1" /> </Button>
+                            </Link>
                         </div>
 
                     </div>

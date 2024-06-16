@@ -1,5 +1,3 @@
-import { getLanguage, Locale, i18n } from "@/get-language";
-
 import {
     Breadcrumb,
     BreadcrumbItem,
@@ -13,13 +11,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import PageTitle from "@/components/ui/pageTitle";
 import { CardAvatars, CardAvatarsPerson } from "@/components/ui/cardAvatars";
 
-export default async function Page({
-    params: { locale },
-}: {
-    params: { locale: Locale };
-}) {
-
-    const lang = await getLanguage(locale);
+export default async function Page() {
 
     return (
 

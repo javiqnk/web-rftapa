@@ -1,10 +1,9 @@
 "use client"
 
-import { Locale } from "@/get-language";
 import Link from "next/link";
 import { Fragment, useState, useEffect } from "react";
 
-export default function Footer({ getLanguage, locale, i18n }: any) {
+export default function Footer() {
 
     const [year, setYear] = useState(new Date().getFullYear());
 
