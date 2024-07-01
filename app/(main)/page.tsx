@@ -52,10 +52,10 @@ export default async function Page() {
             <h2 className="text-base font-semibold leading-7 text-sky-700">Competiciones</h2>
             <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl">Circulares</p>
             <p className="mt-6 text-lg leading-8 text-gray-600 dark:text-gray-400">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.</p>
-            <a href="#" className="inline-flex items-center justify-center px-5 py-3 mr-3 text-base font-medium text-center text-white rounded-lg bg-sky-700 mt-6 hover:bg-sky-800 focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900">
+            <Link href="/circulares" className="inline-flex items-center justify-center px-5 py-3 mr-3 text-base font-medium text-center text-white rounded-lg bg-sky-700 mt-6 hover:bg-sky-800 focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900">
               Círculares
               <svg className="w-5 h-5 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-            </a>
+            </Link>
           </div>
         </div>
       </section>
