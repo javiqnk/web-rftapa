@@ -62,7 +62,7 @@ const navigation = [
         name: 'Circulares', href: '#', subNavigation: [], callsToAction: []
     },
     {
-        name: 'Reglamento', href: '#', subNavigation: [], callsToAction: []
+        name: 'Reglamento', href: '/reglamento', subNavigation: [], callsToAction: []
     },
     {
         name: 'Contacto', href: '/contacto', subNavigation: [], callsToAction: []
@@ -123,18 +123,18 @@ export default function Nav() {
 
                             if (item.subNavigation.length == 0) {
                                 return (
-                                    <a href={item.href} key={item.name} className="text-sm font-semibold text-gray-900 leading-10 dark:text-white align-middle">
+                                    <Link href={item.href} key={item.name} className="text-sm font-semibold text-gray-900 leading-10 dark:text-white align-middle">
                                         {item.name}
-                                    </a>
+                                    </Link>
                                 );
                             }
 
                             return (
                                 <div key={item.name} className="text-sm font-semibold text-gray-900 cursor-pointer">
                                     <HoverCard openDelay={0}>
-                                        <HoverCardTrigger className="m-0 flex items-center gap-x-[0.2rem] text-sm font-semibold text-gray-900 dark:text-white leading-10">
+                                        <HoverCardTrigger className="m-0 flex items-center text-sm font-semibold text-gray-900 dark:text-white leading-10">
                                             {item.name}
-                                            <ChevronDownIcon className="h-5 w-5 flex-none text-gray-400" aria-hidden="true" />
+                                            <ChevronDownIcon className="h-5 w-5 flex-none text-gray-600 dark:text-gray-400" aria-hidden="true" />
                                         </HoverCardTrigger>
                                         <HoverCardContent sideOffset={0} className="overflow-hidden p-0 mt-0 w-fit rounded-3xl shadow-lg ring-1 ring-gray-900/5 bg-white dark:bg-gray-900 dark:border-2 ">
                                             <div className="p-4">

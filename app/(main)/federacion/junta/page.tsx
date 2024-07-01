@@ -11,7 +11,7 @@ export default async function Page() {
         <>
             <Hero title="Junta directiva" description="Federación de Tiro con Arco del Principado de Asturias" />
 
-            <nav className="bg-gray-50 dark:bg-gray-700">
+            <nav className="bg-gray-50 dark:bg-gray-700 text-nowrap overflow-auto">
                 <div className="py-5 container">
                     <div className="flex items-center">
                         <ul className="flex flex-row font-medium mt-0 space-x-2 rtl:space-x-reverse">

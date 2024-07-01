@@ -19,7 +19,7 @@ export default function RootLayout({
 }>) {
 
   return (
-    <html lang={locale} className="scroll-smooth">
+    <html lang={locale} className="scroll-smooth overflow-x-hidden">
       <head>
         <link rel="icon" href="/img/logos/logo.png" sizes="any" />
         <link rel="stylesheet" href="/css/main.css" />

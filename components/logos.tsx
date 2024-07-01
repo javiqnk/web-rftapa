@@ -55,21 +55,21 @@ export default function Logos() {
                 </CarouselContent>
             </Carousel>
             <div className="hidden md:block">
-                <div className="container flex place-content-center items-center py-4 gap-4 justify-between">
+                <div className="container flex place-content-center items-center py-2 gap-4 justify-between">
                     <a href="https://www.asturias.es/" target="_blank" className="hover:scale-105 transition-all">
-                        <img src="/img/logos/principado.png" className="h-16" alt="" />
+                        <img src="/img/logos/principado.png" className="h-14" alt="" />
                     </a>
                     <a href="#" target="_blank" className="hover:scale-105 transition-all">
-                        <img src="/img/logos/logo.png" className="h-24" alt="" />
+                        <img src="/img/logos/logo.png" className="h-20" alt="" />
                     </a>
                     <a href="https://www.federarco.es/" target="_blank" className="hover:scale-105 transition-all">
-                        <img src="/img/logos/rfeta-bg.png" className="h-24" alt="" />
+                        <img src="/img/logos/rfeta-bg.png" className="h-20" alt="" />
                     </a>
                     <a href="https://www.worldarchery.sport/" target="_blank" className="hover:scale-105 transition-all">
-                        <img src="/img/logos/WA-bg.png" className="h-24" alt="" />
+                        <img src="/img/logos/WA-bg.png" className="h-20" alt="" />
                     </a>
                     <a href="https://www.archeryeurope.org/" target="_blank" className="hover:scale-105 transition-all">
-                        <img src="/img/logos/archery-europe-bg.png" className="h-24" alt="" />
+                        <img src="/img/logos/archery-europe-bg.png" className="h-20" alt="" />
                     </a>
                 </div>
             </div>

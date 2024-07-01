@@ -21,8 +21,8 @@ export default async function Page() {
     <>
 
       <header className=" -mt-20">
-        <div className="w-full bg-center bg-cover bg-[url('/img/fondo03.jpg')]">
-          <div className="w-full h-full bg-black/50 py-10 pt-32">
+        <div className="w-full bg-center md:bg-bottom bg-cover md:bg-fixed bg-[url('/img/fondo03.jpg')]">
+          <div className="w-full h-full bg-black/50 py-10 pt-48">
             <div className="container pt-20 md:pt-32 text-right">
               <h1 className="mb-4 text-4xl text-balance md:text-5xl lg:text-6xl text-white">
                 Federación de Tiro con Arco<br />
@@ -95,7 +95,7 @@ export default async function Page() {
           <h2 className="text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl">Noticias</h2>
           <p className="mt-2 text-lg leading-8 text-gray-600 dark:text-gray-400">Últimas noticias de la Federación Asturiana de Tiro con Arco.</p>
         </div>
-        <Carousel className="w-full">
+        <Carousel className="w-[92%] md:w-[96%] mx-auto">
           <CarouselContent className="-ml-1">
             <CarouselItem key={1} className="pl-1 md:basis-1/2 lg:basis-1/3">
               <div className="p-1">
