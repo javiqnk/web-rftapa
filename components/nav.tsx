@@ -185,7 +185,7 @@ export default function Nav() {
                     <div className="flex items-center justify-between">
                         <div className="flex lg:flex-1">
                             <div>
-                                <span className="sr-only">Federación Asturiana de Tiro con Arco</span>
+                                <span className="sr-only">Federación Asturiana de Tiro con A</span>
                                 <Image className="h-9 w-auto" src="/img/logos/logo.png" alt="" height={36} width={36} />
                             </div>
                         </div>
@@ -228,14 +228,13 @@ export default function Nav() {
                                                     </Disclosure.Button>
                                                     <Disclosure.Panel className="mt-2 space-y-2">
                                                         {item.subNavigation.map((item) => (
-                                                            <Disclosure.Button
+                                                            <Link
                                                                 key={item.name}
-                                                                as="a"
                                                                 href={item.href}
                                                                 className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 hover:bg-gray-50 dark:hover:bg-gray-900"
                                                             >
                                                                 {item.name}
-                                                            </Disclosure.Button>
+                                                            </Link>
                                                         ))}
                                                     </Disclosure.Panel>
                                                 </>
