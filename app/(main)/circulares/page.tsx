@@ -13,14 +13,13 @@ export default async function Page() {
         <>
 
             <header className="-mt-5">
-                <div className="w-full bg-gradient-to-r from-cyan-600 to-sky-700">
+                <div className="w-full bg-gradient-to-r from-blue-800 to-sky-600">
                     <div className="w-full h-full">
-                        <div className="container py-12 text-center">
-                            <h1 className="text-4xl text-balance md:text-5xl lg:text-6xl text-white">
-                                <b>Circulares</b>
-                                
+                        <div className="container py-8 md:py-12 text-center">
+                            <h1 className="text-3xl text-balance md:text-4xl lg:text-5xl text-white font-medium">
+                                Circulares
                             </h1>
-                            <h2 className="text-2xl text-balance md:text-3xl lg:text-4xl text-white">Circulares y convocatorias de la FTAPA</h2>
+                            <h2 className="text-xl text-balance md:text-3xl lg:text-3xl text-white">Circulares y convocatorias de la FTAPA</h2>
                         </div>
                     </div>
                 </div>
