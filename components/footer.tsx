@@ -37,10 +37,10 @@ export default function Footer() {
                             <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">FTAPA</h2>
                             <ul className="text-gray-500 dark:text-gray-400 font-medium">
                                 <li className="mb-3">
-                                    <Link href="/cea/nosotros" className="hover:underline">Historia</Link>
+                                    <Link href="/federacion/historia" className="hover:underline">Historia</Link>
                                 </li>
                                 <li className="mb-3">
-                                    <Link href="/cea/organigrama" className="hover:underline">Junta directiva</Link>
+                                    <Link href="/federacion/junta" className="hover:underline">Junta directiva</Link>
                                 </li>
                                 <li>
                                     <Link href="/contacto" className="hover:underline">Contacto</Link>

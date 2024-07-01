@@ -19,9 +19,10 @@ export default function RootLayout({
 }>) {
 
   return (
-    <html lang={locale}>
+    <html lang={locale} className="scroll-smooth">
       <head>
         <link rel="icon" href="/img/logos/logo.png" sizes="any" />
+        <link rel="stylesheet" href="/css/main.css" />
       </head>
       <body className={inter.className}>
         <ThemeProvider

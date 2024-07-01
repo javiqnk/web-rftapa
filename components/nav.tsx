@@ -29,40 +29,40 @@ import {
     UserGroupIcon,
     BriefcaseIcon,
     ArrowLongRightIcon,
+    BookOpenIcon,
+    BookmarkIcon
 } from '@heroicons/react/24/outline'
 import { ChevronDownIcon, PhoneIcon, PlayCircleIcon } from '@heroicons/react/20/solid'
 import { Button } from './ui/button';
 
 const navigation = [
     {
-        name: 'CEA',
+        name: 'Federación',
         href: '#',
         subNavigation: [
-            { name: 'Nosotros', description: 'Sobre la Comisión Española de Automática', href: '#', icon: BriefcaseIcon },
-            { name: 'Organigrama', description: 'Organigrama de la CEA', href: '/cea/organigrama', icon: UserGroupIcon },
-            { name: 'Fundación CEA', description: '', href: '/cea/fundacion', icon: AcademicCapIcon },
-            { name: 'Premio CEA', description: 'Premio "Comité Español de Automática" (CEA)', href: '/cea/premio', icon: TrophyIcon },
-            { name: 'Formar parte de la CEA', description: '¡Hazte socio de la CEA!', href: '#', icon: UserPlusIcon },
+            { name: 'Historia', description: 'Historia de la federación', href: '/federacion/historia', icon: BookOpenIcon },
+            { name: 'Junta directiva', description: 'Junta directiva de la FTAPA', href: '/federacion/junta', icon: UserGroupIcon },
+            { name: 'Clubes', description: 'Clubes asociados a la federación', href: '/federacion/clubes', icon: BookmarkIcon },
         ],
         callsToAction: [
             { name: 'Contacto', href: '/contacto', icon: PhoneIcon },
-            { name: 'Acceso socios', href: '/socios/acceso', icon: UsersIcon },
+            { name: 'Portal del federado', href: 'https://federados.rfeta.es/acceder/', icon: UsersIcon },
         ]
     },
     {
-        name: 'La automática',
+        name: 'Competiciones',
         href: '#',
         subNavigation: [],
         callsToAction: []
     },
     {
-        name: 'Líneas estratégicas', href: '#', subNavigation: [], callsToAction: []
+        name: 'Noticias', href: '#', subNavigation: [], callsToAction: []
     },
     {
-        name: 'Grupos temáticos', href: '#', subNavigation: [], callsToAction: []
+        name: 'Circulares', href: '#', subNavigation: [], callsToAction: []
     },
     {
-        name: 'Colaboradores', href: '#', subNavigation: [], callsToAction: []
+        name: 'Reglamento', href: '#', subNavigation: [], callsToAction: []
     },
     {
         name: 'Contacto', href: '/contacto', subNavigation: [], callsToAction: []
@@ -130,9 +130,9 @@ export default function Nav() {
                             }
 
                             return (
-                                <a key={item.name} href="#" className="text-sm font-semibold text-gray-900">
+                                <div key={item.name} className="text-sm font-semibold text-gray-900 cursor-pointer">
                                     <HoverCard openDelay={0}>
-                                        <HoverCardTrigger className="m-0 flex items-center gap-x-1 px-2 text-sm font-semibold text-gray-900 dark:text-white leading-10">
+                                        <HoverCardTrigger className="m-0 flex items-center gap-x-[0.2rem] text-sm font-semibold text-gray-900 dark:text-white leading-10">
                                             {item.name}
                                             <ChevronDownIcon className="h-5 w-5 flex-none text-gray-400" aria-hidden="true" />
                                         </HoverCardTrigger>
@@ -144,7 +144,7 @@ export default function Nav() {
                                                         className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-4 hover:bg-gray-50 dark:hover:bg-gray-800"
                                                     >
                                                         <div className="flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
-                                                            <item.icon className="h-6 w-6 text-gray-600 group-hover:text-lime-500" aria-hidden="true" />
+                                                            <item.icon className="h-6 w-6 text-gray-600 group-hover:text-sky-700" aria-hidden="true" />
                                                         </div>
                                                         <div className="flex-auto">
                                                             <Link href={item.href} className="block font-semibold text-gray-900 dark:text-white">
@@ -170,7 +170,7 @@ export default function Nav() {
                                             </div>
                                         </HoverCardContent>
                                     </HoverCard>
-                                </a>
+                                </div>
                             );
                         })}
                         {/* {navigation.map((item) => (} */}
@@ -268,11 +268,11 @@ export default function Nav() {
                                 })}
                             </div>
                             <div className="py-6 flex">
-                                <div>
-                                    {/* <LanguageSelector selectedLang={locale} langs={i18n.locales} langsNames={i18n.localesNames} /> */}
-                                </div>
+                                <ModeToggle />
                                 <div className='ms-2'>
-                                    <ModeToggle />
+                                    <Link target='_blank' href="https://federados.rfeta.es/acceder/">
+                                        <Button size="sm" variant="outline">Portal del federado <ArrowLongRightIcon className="w-5 ms-1" /> </Button>
+                                    </Link>
                                 </div>
                             </div>
                         </div>
