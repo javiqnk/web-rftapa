@@ -81,7 +81,7 @@ export default function Nav() {
         <header>
             <div className='w-full fixed top-0 bg-white dark:bg-slate-800 md:bg-white/80 md:dark:bg-slate-800/80 shadow z-50 md:backdrop-blur'>
                 <nav className="container flex items-center justify-between py-4 " aria-label="Global">
-                    <a className="flex lg:flex-1" href='/'>
+                    <Link className="flex lg:flex-1" href='/'>
                         <div>
                             <span className="sr-only">Federación Asturiana de Tiro con Arco</span>
                             <Image className="h-11 w-auto" src="/img/logos/logo.png" alt="" height={40} width={40} />
@@ -94,7 +94,7 @@ export default function Nav() {
                                 de Tiro con Arco
                             </div>
                         </div>
-                    </a>
+                    </Link>
                     <div className="flex lg:hidden">
                         <button
                             type="button"
@@ -167,8 +167,6 @@ export default function Nav() {
                         {/* <a href="#" className="text-sm font-semibold leading-6 border p-1 px-2 rounded-lg text-gray-900">
                         Acceder <span aria-hidden="true">&rarr;</span>
                     </a> */}
-
-
                         <div>
                             <ModeToggle />
                         </div>
@@ -187,16 +185,8 @@ export default function Nav() {
                     <div className="flex items-center justify-between">
                         <div className="flex lg:flex-1">
                             <div>
-                                <span className="sr-only">Comité Español de Automática</span>
+                                <span className="sr-only">Federación Asturiana de Tiro con Arco</span>
                                 <Image className="h-9 w-auto" src="/img/logos/logo.png" alt="" height={36} width={36} />
-                            </div>
-                            <div className='ms-2'>
-                                <div className="leading-4">
-                                    Comite Español
-                                </div>
-                                <div className="leading-4">
-                                    de <b>Automática</b>
-                                </div>
                             </div>
                         </div>
                         <button
@@ -216,12 +206,12 @@ export default function Nav() {
                                     if (item.subNavigation.length == 0) {
                                         return (
                                             <>
-                                                <a
+                                                <Link
                                                     href={item.href}
                                                     className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50 dark:hover:bg-gray-900 dark:text-white"
                                                 >
                                                     {item.name}
-                                                </a>
+                                                </Link>
                                             </>
                                         );
                                     }
