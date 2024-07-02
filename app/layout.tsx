@@ -6,8 +6,8 @@ const inter = Inter({ subsets: ["latin"] });
 import { ThemeProvider } from "@/components/theme-provider"
 
 export const metadata: Metadata = {
-  title: "Comité Español de Automática | CEA",
-  description: "Página web oficial del Comité Español de Automática",
+  title: "Federación de Tiro con Arco del Principado de Asturias | FTAPA",
+  description: "Página web oficial de la Federación de Tiro con Arco del Principado de Asturias",
 };
 
 export default function RootLayout({
@@ -31,11 +31,8 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          
           {children}
-
         </ThemeProvider>
-
       </body>
     </html>
   );

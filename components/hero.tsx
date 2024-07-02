@@ -1,11 +1,11 @@
 export default function Hero({ title = "", description=""} : any) {
 
     return (
-        <header className="-mt-20">
-            <div className="w-full bg-center bg-cover bg-[url('/img/fondo01.jpeg')]">
-                <div className="w-full h-full bg-black/50 pb-6 pt-20">
-                    <div className="container pt-20 md:pt-32 text-start">
-                        <h1 className="text-4xl text-balance md:text-4xl lg:text-5xl text-white">
+        <header className="-mt-24">
+            <div className="w-full bg-center bg-cover bg-[url('/img/fondo05.jpg')]">
+                <div className="w-full h-full bg-black/70 pb-6 pt-20">
+                    <div className="container pt-24 md:pt-36 text-start">
+                        <h1 className="text-4xl text-balance md:text-5xl lg:text-6xl text-white">
                             <b>{title}</b>
                         </h1>
                     </div>

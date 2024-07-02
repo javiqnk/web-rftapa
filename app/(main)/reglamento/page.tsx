@@ -12,10 +12,10 @@ export default async function Page() {
     return (
         <>
 
-            <header className="-mt-20">
+            <header className="-mt-24">
                 <div className="w-full bg-center bg-cover bg-[url('/img/fondo04.jpg')]">
                     <div className="w-full h-full bg-black/50 pb-8 pt-32">
-                        <div className="container pt-20 md:pt-32 text-end">
+                        <div className="container pt-20 md:pt-36 text-end">
                             <h1 className="text-4xl text-balance md:text-5xl lg:text-6xl text-white">
                                 <b>Normativas y reglamentos</b>
                             </h1>

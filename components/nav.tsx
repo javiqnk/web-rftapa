@@ -56,7 +56,7 @@ const navigation = [
         callsToAction: []
     },
     {
-        name: 'Noticias', href: '#', subNavigation: [], callsToAction: []
+        name: 'Noticias', href: '/noticias', subNavigation: [], callsToAction: []
     },
     {
         name: 'Circulares', href: '/circulares', subNavigation: [], callsToAction: []
