@@ -80,7 +80,7 @@ export default function Nav() {
     return (
         <header>
             <div className='w-full fixed top-0 bg-white dark:bg-slate-800 md:bg-white/80 md:dark:bg-slate-800/80 shadow z-50 md:backdrop-blur'>
-                <nav className="container flex items-center justify-between py-4 " aria-label="Global">
+                <nav className="px-3 sm:px-0 sm:container flex items-center justify-between py-4 " aria-label="Global">
                     <Link className="flex lg:flex-1" href='/'>
                         <div>
                             <span className="sr-only">Federación Asturiana de Tiro con Arco</span>
@@ -88,10 +88,10 @@ export default function Nav() {
                         </div>
                         <div className='ms-2 mt-2'>
                             <div className="leading-4">
-                                Federación Asturiana
+                                Federación de Tiro con Arco
                             </div>
-                            <div className="leading-4">
-                                de Tiro con Arco
+                            <div className="leading-4 font-medium">
+                                Principado de Asturias
                             </div>
                         </div>
                     </Link>

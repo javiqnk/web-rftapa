@@ -23,11 +23,11 @@ export default function Footer() {
                                 <img className="h-14 w-auto" src="/img/logos/logo.png" alt="" height={55} width={55} />
                             </div>
                             <div className='ms-2 mt-1'>
-                                <div className="leading-6 text-xl">
-                                    Federación Asturiana
+                                <div className="leading-6 text-lg">
+                                    Federación de Tiro con Arco
                                 </div>
-                                <div className="leading-5 text-xl">
-                                    de Tiro con Arco
+                                <div className="leading-5 text-lg font-medium">
+                                    Principado de Asturias
                                 </div>
                             </div>
                         </div>
@@ -50,9 +50,6 @@ export default function Footer() {
                         <div>
                             <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Síguenos</h2>
                             <ul className="text-gray-500 dark:text-gray-400 font-medium">
-                                <li className="mb-3">
-                                    <a href="https://x.com/ftapa1" className="hover:underline ">X (Twitter)</a>
-                                </li>
                                 <li className="mb-3">
                                     <a href="https://www.facebook.com/rftapa" className="hover:underline">Facebook</a>
                                 </li>
@@ -82,12 +79,6 @@ export default function Footer() {
                     <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">© {year} <a href="https://www.ceautomatica.es/" className="hover:underline">Federación Asturiana de Tiro con Arco</a> - <b>Powered by <a className="text-[#3F84A6] font-extrabold" target="_blank" href="https://addon-sport.com/">Add On Sport</a></b>
                     </span>
                     <div className="flex mt-4 sm:justify-center sm:mt-0">
-                        <a href="https://x.com/ftapa1" className="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-                                <path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z" />
-                            </svg>
-                            <span className="sr-only">Twitter</span>
-                        </a>
                         <a href="https://www.facebook.com/rftapa" className="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                                 <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951" />
