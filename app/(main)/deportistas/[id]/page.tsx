@@ -31,14 +31,15 @@ export default async function Page({
 
 }) {
 
-    revalidatePath('http://localhost:3000/api/federated/v1/athlete/' + id)
-    const dataApi = await fetch('http://localhost:3000/api/federated/v1/athlete/' + id).then((res) =>
+    revalidatePath('/api/federated/v1/athlete/' + id)
+    const dataApi = await fetch('https://ftapa.addon-sport.com/api/federated/v1/athlete/' + id).then((res) =>
         res.json()
     )
 
     const fedeData = dataApi.data
 
-    const resultsDataApi = await fetch('http://localhost:3000/api/results/v1/athlete-results/' + fedeData.FederatedLicense).then((res) =>
+    revalidatePath('/api/results/v1/athlete-results/' + fedeData.FederatedLicense)
+    const resultsDataApi = await fetch('https://ftapa.addon-sport.com/api/results/v1/athlete-results/' + fedeData.FederatedLicense).then((res) =>
         res.json()
     )
 
