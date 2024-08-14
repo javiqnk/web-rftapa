@@ -44,8 +44,6 @@ export default async function Page({
 
     const resultsData = resultsDataApi.data
 
-    console.log(resultsData)
-
     return (
         <>
             <header className="-mt-32">
