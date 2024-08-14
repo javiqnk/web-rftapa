@@ -51,12 +51,15 @@ const navigation = [
     },
     {
         name: 'Competiciones',
-        href: '#',
+        href: '/competiciones',
         subNavigation: [],
         callsToAction: []
     },
     {
-        name: 'Noticias', href: '/noticias', subNavigation: [], callsToAction: []
+        name: 'Deportistas',
+        href: '/deportistas',
+        subNavigation: [],
+        callsToAction: []
     },
     {
         name: 'Circulares', href: '/circulares', subNavigation: [], callsToAction: []
@@ -79,8 +82,8 @@ export default function Nav() {
 
     return (
         <header>
-            <div className='w-full fixed top-0 bg-white dark:bg-slate-800 md:bg-white/80 md:dark:bg-slate-800/80 shadow z-50 md:backdrop-blur'>
-                <nav className="px-3 sm:px-0 sm:container flex items-center justify-between py-4 " aria-label="Global">
+            <div className='w-full fixed top-0 bg-white dark:bg-slate-800 md:bg-white/80 md:dark:bg-slate-800/80 shadow z-40 md:backdrop-blur'>
+                <nav className="px-3 sm:container flex items-center justify-between py-4 " aria-label="Global">
                     <Link className="flex lg:flex-1" href='/'>
                         <div>
                             <span className="sr-only">Federación Asturiana de Tiro con Arco</span>
@@ -95,7 +98,7 @@ export default function Nav() {
                             </div>
                         </div>
                     </Link>
-                    <div className="flex lg:hidden">
+                    <div className="flex xl:hidden">
                         <button
                             type="button"
                             className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
@@ -105,7 +108,7 @@ export default function Nav() {
                             <Bars3Icon className="h-8 w-8 dark:text-white" aria-hidden="true" />
                         </button>
                     </div>
-                    <div className="hidden lg:flex lg:gap-x-2 xl:gap-x-6">
+                    <div className="hidden xl:flex lg:gap-x-2 xl:gap-x-6">
                         {navigation.map((item) => {
 
                             if (item.subNavigation.length == 0) {
@@ -163,7 +166,7 @@ export default function Nav() {
                         {/* {navigation.map((item) => (} */}
                     </div>
 
-                    <div className="hidden lg:flex lg:flex-1 lg:justify-end">
+                    <div className="hidden xl:flex xl:flex-1 xl:justify-end">
                         {/* <a href="#" className="text-sm font-semibold leading-6 border p-1 px-2 rounded-lg text-gray-900">
                         Acceder <span aria-hidden="true">&rarr;</span>
                     </a> */}
@@ -179,13 +182,13 @@ export default function Nav() {
                     </div>
                 </nav>
             </div>
-            <Dialog className="lg:hidden" open={mobileMenuOpen} onClose={setMobileMenuOpen}>
+            <Dialog className="xl:hidden z-50" open={mobileMenuOpen} onClose={setMobileMenuOpen}>
                 <div className="fixed inset-0 z-10" />
                 <Dialog.Panel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white dark:bg-gray-800 px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
                     <div className="flex items-center justify-between">
-                        <div className="flex lg:flex-1">
+                        <div className="flex xl:flex-1">
                             <div>
-                                <span className="sr-only">Federación Asturiana de Tiro con A</span>
+                                <span className="sr-only">Federación de Tiro con Arco Principado de Asturias</span>
                                 <Image className="h-9 w-auto" src="/img/logos/logo.png" alt="" height={36} width={36} />
                             </div>
                         </div>
@@ -202,17 +205,17 @@ export default function Nav() {
                         <div className="-my-6 divide-y divide-gray-500/10">
                             <div className="space-y-2 py-6">
                                 {navigation.map((item) => {
-
                                     if (item.subNavigation.length == 0) {
                                         return (
-                                            <>
+                                            <div key={item.name}>
                                                 <Link
                                                     href={item.href}
+                                                    
                                                     className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50 dark:hover:bg-gray-900 dark:text-white"
                                                 >
                                                     {item.name}
                                                 </Link>
-                                            </>
+                                            </div>
                                         );
                                     }
                                     return (
