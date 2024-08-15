@@ -3,8 +3,7 @@ import DataTable from "./table";
 export default async function Page() {
 
     const data = await fetch('https://ftapa.addon-sport.com/api/federated/v1/athletes').then((res) =>
-        console.log(res)
-        // res.json()
+        res.json()
     )
 
     return (
@@ -23,7 +22,7 @@ export default async function Page() {
             </header>
 
             <div className="my-8 container">
-                {/* <DataTable data={data.data} /> */}
+                <DataTable data={data.data} />
             </div>
         </>
     );
