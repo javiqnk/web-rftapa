@@ -82,7 +82,7 @@ export default function Nav() {
 
     return (
         <header>
-            <div className='w-full fixed top-0 bg-white dark:bg-slate-800 md:bg-white/80 md:dark:bg-slate-800/80 shadow z-40 md:backdrop-blur'>
+            <div className='w-full fixed top-0 bg-white/70 dark:bg-slate-800/70 shadow z-40 backdrop'>
                 <nav className="px-3 sm:container flex items-center justify-between py-4 " aria-label="Global">
                     <Link className="flex lg:flex-1" href='/'>
                         <div>
