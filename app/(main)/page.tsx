@@ -12,7 +12,46 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel"
 import { Card, CardContent } from "@/components/ui/card";
+import { ArrowRight } from "lucide-react";
 
+const data = [
+  {
+    id: "1",
+    date: "30/06/2024",
+    url: "http://www.rftapa.com/docs/circulares/cir_414.pdf",
+    name: "Preselección Recurvo y Compuesto 2023-2024",
+  },
+  {
+    id: "2",
+    date: "30/06/2024",
+    url: "http://www.rftapa.com/docs/circulares/cir_413.pdf",
+    name: "Preselección Sub-15, Sub-18, Sub-21 y Plus 50 2023-2024",
+  },
+  {
+    id: "3",
+    date: "28/06/2024",
+    url: "http://www.rftapa.com/docs/circulares/cir_412.pdf",
+    name: "Candidaturas definitivas Asamblea FTAPA 2024",
+  },
+  {
+    id: "4",
+    date: "21/06/2024",
+    url: "http://www.rftapa.com/docs/circulares/cir_411.pdf",
+    name: "Preselección Asturiana Tradicional, Longbow y Desnudo Aire Libre 2023-2024",
+  },
+  {
+    id: "5",
+    date: "20/06/2024",
+    url: "http://www.rftapa.com/docs/circulares/cir_410.pdf",
+    name: "Candidaturas provisionales Asamblea FTAPA 2024",
+  },
+  {
+    id: "6",
+    date: "18/06/2024",
+    url: "http://www.rftapa.com/docs/circulares/cir_409.pdf",
+    name: "Trofeo FTAPA para Personas con Discapacidad Temporada 2023-2024",
+  },
+]
 
 
 export default async function Page() {
@@ -97,76 +136,27 @@ export default async function Page() {
         </div>
         <Carousel className="w-[92%] md:w-[96%] mx-auto">
           <CarouselContent className="-ml-1">
-            <CarouselItem key={1} className="pl-1 md:basis-1/2 lg:basis-1/3">
-              <div className="p-1">
-                <Card>
-                  <CardContent className="p-4">
-                    <div className="text-lg font-semibold">Resultados 2º Entrenamiento 3D 2021</div>
-                    <div className="mb-5">19/4/2021</div>
-                    <a href="#" className="inline-flex items-center justify-center text-base font-medium hover:underline">
-                      Leer noticia
-                      <svg className="w-5 h-5 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-                    </a>
-                  </CardContent>
-                </Card>
-              </div>
-            </CarouselItem>
-            <CarouselItem key={1} className="pl-1 md:basis-1/2 lg:basis-1/3">
-              <div className="p-1">
-                <Card>
-                  <CardContent className="p-4">
-                    <div className="text-lg font-semibold">Resultados primer entrenamiento 3D 2021</div>
-                    <div className="mb-5">19/4/2021</div>
-                    <a href="#" className="inline-flex items-center justify-center text-base font-medium hover:underline">
-                      Leer noticia
-                      <svg className="w-5 h-5 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-                    </a>
-                  </CardContent>
-                </Card>
-              </div>
-            </CarouselItem>
-            <CarouselItem key={1} className="pl-1 md:basis-1/2 lg:basis-1/3">
-              <div className="p-1">
-                <Card>
-                  <CardContent className="p-4">
-                    <div className="text-lg font-semibold">2º entrenamiento 3D 2021</div>
-                    <div className="mb-5">19/4/2021</div>
-                    <a href="#" className="inline-flex items-center justify-center text-base font-medium hover:underline">
-                      Leer noticia
-                      <svg className="w-5 h-5 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-                    </a>
-                  </CardContent>
-                </Card>
-              </div>
-            </CarouselItem>
-            <CarouselItem key={1} className="pl-1 md:basis-1/2 lg:basis-1/3">
-              <div className="p-1">
-                <Card>
-                  <CardContent className="p-4">
-                    <div className="text-lg font-semibold">Control puntuaciones 6 y 7 marzo 2021</div>
-                    <div className="mb-5">19/4/2021</div>
-                    <a href="#" className="inline-flex items-center justify-center text-base font-medium hover:underline">
-                      Leer noticia
-                      <svg className="w-5 h-5 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-                    </a>
-                  </CardContent>
-                </Card>
-              </div>
-            </CarouselItem>
-            <CarouselItem key={1} className="pl-1 md:basis-1/2 lg:basis-1/3">
-              <div className="p-1">
-                <Card>
-                  <CardContent className="p-4">
-                    <div className="text-lg font-semibold">Control puntuaciones 20 y 21 febrero 2021</div>
-                    <div className="mb-5">19/4/2021</div>
-                    <a href="#" className="inline-flex items-center justify-center text-base font-medium hover:underline">
-                      Leer noticia
-                      <svg className="w-5 h-5 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-                    </a>
-                  </CardContent>
-                </Card>
-              </div>
-            </CarouselItem>
+            {data.map((item) => (
+              <CarouselItem key={item.id} className="pl-1 md:basis-1/2 lg:basis-1/3">
+                <div className="p-1">
+                  <Card>
+                    <CardContent className="p-4">
+                      <div className="text-lg font-semibold">{item.name}</div>
+                      <div className="mb-5">{item.date}</div>
+                      <a
+                        href={item.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center justify-center text-base font-medium hover:underline"
+                      >
+                        Leer circular
+                        <ArrowRight className="w-5 h-5 ml-2" />
+                      </a>
+                    </CardContent>
+                  </Card>
+                </div>
+              </CarouselItem>
+            ))}
           </CarouselContent>
           <CarouselPrevious />
           <CarouselNext />

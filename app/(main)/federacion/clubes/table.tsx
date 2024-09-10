@@ -116,7 +116,7 @@ export default function DataTable({ data }: { data: Payment[] }) {
     const router = useRouter()
 
     const handleRowClick = (row: any) => {
-        router.push(`/federacion/clubes/${row.original.FederatedId}`)
+        router.push(`/federacion/clubes/${row.original.ClubID}`)
     }
 
     return (

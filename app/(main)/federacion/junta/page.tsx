@@ -53,9 +53,17 @@ const data = {
   ],
   "asamblea": {
     "deportistas": [
-      { "name": "María ÁLVAREZ COLLADA", "urlImage": "/images/avatar.png" },
-      { "name": "Susana MARTINO BLANCO", "urlImage": "/images/avatar.png" },
-      { "name": "Mario SÁNCHEZ MEDRANO", "urlImage": "/images/avatar.png" }
+      { "name": "Valentín Marcos ALONSO MURIAS", "urlImage": "/images/avatar.png" },
+      { "name": "Yolanda CAMPOS SANTOS", "urlImage": "/images/avatar.png" },
+      { "name": "Jennifer MEJUTO MATEO", "urlImage": "/images/avatar.png" },
+      { "name": "Luis Carlos PUERTA MARTINEZ", "urlImage": "/images/avatar.png" },
+      { "name": "Manuel Ángel MÉNDEZ ORDOÑEZ", "urlImage": "/images/avatar.png" },
+      { "name": "Ana María LOPEZ de la REINA RIPOLL", "urlImage": "/images/avatar.png" },
+      { "name": "Luzdivina AMOR CEPEDA", "urlImage": "/images/avatar.png" },
+      { "name": "Emilio José CONDE RONDEROS", "urlImage": "/images/avatar.png" },
+      { "name": "Olaya CORVELLE FERNANDEZ", "urlImage": "/images/avatar.png" },
+      { "name": "Juan Manuel MARTINEZ GONZALEZ", "urlImage": "/images/avatar.png" },
+      { "name": "Sonia LOPEZ ALVAREZ", "urlImage": "/images/avatar.png" }
     ],
     "tecnicos": [
       { "name": "María ÁLVAREZ COLLADA", "urlImage": "/images/avatar.png" },
@@ -100,6 +108,8 @@ const data = {
 
 export default function Page() {
   const [activeSection, setActiveSection] = useState("junta_directiva")
+  const [activeTab, setActiveTab] = useState("representantes")
+  const categories = ['deportistas', 'tecnicos', 'jueces']
 
   const handleScroll = () => {
     const sections = document.querySelectorAll("section")
@@ -122,28 +132,25 @@ export default function Page() {
 
   return (
     <div className={``}>
-             <Hero title={data.pageTitle} description={data.pageDescription} />
+      <Hero title={data.pageTitle} description={data.pageDescription} />
       <div className="bg-gradient-to-b from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 min-h-screen">
-
-
         <nav className="sticky top-[75px] z-10 bg-white dark:bg-gray-800 shadow-md">
           <div className="container mx-auto px-4">
             <div className="flex justify-between items-center py-4">
-                <div className="flex">
-                  {data.navigation.map((item, index) => (
-                    <Link
-                      key={index}
-                      href={item.href}
-                      className={`px-4 py-2 mx-2 rounded-md transition-colors ${
-                        activeSection === item.href.slice(1)
-                          ? "bg-primary text-primary-foreground"
-                          : "text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700"
+              <div className="flex overflow-x-auto">
+                {data.navigation.map((item, index) => (
+                  <Link
+                    key={index}
+                    href={item.href}
+                    className={`px-4 py-2 mx-2 rounded-md transition-colors whitespace-nowrap ${activeSection === item.href.slice(1)
+                        ? "bg-primary text-primary-foreground"
+                        : "text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700"
                       }`}
-                    >
-                      {item.label}
-                    </Link>
-                  ))}
-                </div>
+                  >
+                    {item.label}
+                  </Link>
+                ))}
+              </div>
             </div>
           </div>
         </nav>
@@ -214,49 +221,79 @@ export default function Page() {
 
           <section id="asamblea" className="mb-16">
             <h2 className="text-3xl font-semibold mb-8 text-gray-800 dark:text-white">Asamblea</h2>
-            <Tabs defaultValue="representantes" className="w-full">
-              <TabsList className="grid w-full grid-cols-2 mb-8">
-                <TabsTrigger value="representantes">Representantes</TabsTrigger>
-                <TabsTrigger value="clubes">Clubes</TabsTrigger>
+            <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
+              <TabsList className="w-full flex justify-start mb-8 bg-transparent">
+                <TabsTrigger
+                  value="representantes"
+                  className="flex-1 max-w-[200px] px-4 py-2 text-sm font-medium rounded-md data-[state=active]:bg-primary data-[state=active]:text-primary-foreground"
+                >
+                  Representantes
+                </TabsTrigger>
+                <TabsTrigger
+                  value="clubes"
+                  className="flex-1 max-w-[200px] px-4 py-2 text-sm font-medium rounded-md data-[state=active]:bg-primary data-[state=active]:text-primary-foreground"
+                >
+                  Clubes
+                </TabsTrigger>
               </TabsList>
               <TabsContent value="representantes">
-                <Card>
-                  <CardContent className="pt-6">
-                    <div className="space-y-8">
-                      {['deportistas', 'tecnicos', 'jueces'].map((category: any) => (
-                        <div key={category}>
-                          <h3 className="text-xl font-medium mb-4 capitalize">{category}</h3>
-                          <div className="flex flex-wrap gap-4">
-                            {data.asamblea[category as keyof typeof data.asamblea].map((person: any, index: any) => (
-                              <div key={index} className="text-center">
-                                <Avatar className="h-16 w-16 mx-auto">
+                <Card className="border-none shadow-lg">
+                  <CardContent className="p-8">
+                    <div className="space-y-12">
+                      {categories.map((category) => (
+                        <motion.div
+                          key={category}
+                          initial={{ opacity: 0, y: 20 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          transition={{ duration: 0.5 }}
+                        >
+                          <h3 className="text-2xl font-semibold mb-6 capitalize text-gray-700 dark:text-gray-200">{category}</h3>
+                          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                            {data.asamblea[category as keyof typeof data.asamblea].map((person: any, index: number) => (
+                              <motion.div
+                                key={index}
+                                className="flex items-center space-x-4"
+                                whileHover={{ scale: 1.02 }}
+                                transition={{ type: "spring", stiffness: 400 }}
+                              >
+                                <Avatar className="h-10 w-10 flex-shrink-0">
                                   <AvatarImage src={person.urlImage} alt={person.name} />
-                                  <AvatarFallback><UserIcon className='w-[55%] h-[55%]' /></AvatarFallback>
+                                  <AvatarFallback><UserIcon className="w-3/5 h-3/5" /></AvatarFallback>
                                 </Avatar>
-                                <p className="mt-2 text-sm">{person.name}</p>
-                              </div>
+                                <p className="font-medium text-sm text-gray-800 dark:text-gray-200">{person.name}</p>
+                              </motion.div>
                             ))}
                           </div>
-                        </div>
+                        </motion.div>
                       ))}
                     </div>
                   </CardContent>
                 </Card>
               </TabsContent>
               <TabsContent value="clubes">
-                <Card>
-                  <CardContent className="pt-6">
-                    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
-                      {data.asamblea.clubes.map((club, index) => (
-                        <div key={index} className="flex flex-col items-center text-center">
-                          <Avatar className="w-20 h-20">
+                <Card className="border-none shadow-lg">
+                  <CardContent className="p-8">
+                    <motion.div
+                      className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      transition={{ duration: 0.5 }}
+                    >
+                      {data.asamblea.clubes.map((club: any, index: number) => (
+                        <motion.div
+                          key={index}
+                          className="flex items-center space-x-4"
+                          whileHover={{ scale: 1.02 }}
+                          transition={{ type: "spring", stiffness: 400 }}
+                        >
+                          <Avatar className="w-10 h-10 flex-shrink-0">
                             <AvatarImage src={club.urlImage} alt={club.name} />
-                            <AvatarFallback><UserIcon className='w-[55%] h-[55%]' /></AvatarFallback>
+                            <AvatarFallback><UserIcon className="w-3/5 h-3/5" /></AvatarFallback>
                           </Avatar>
-                          <p className="mt-2 text-sm">{club.name}</p>
-                        </div>
+                          <p className="font-medium text-sm text-gray-800 dark:text-gray-200">{club.name}</p>
+                        </motion.div>
                       ))}
-                    </div>
+                    </motion.div>
                   </CardContent>
                 </Card>
               </TabsContent>
