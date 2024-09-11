@@ -40,10 +40,6 @@ export default function CompetitionLayout({
     <div className="min-h-[60vh] bg-gradient-to-b from-sky-100 to-white dark:from-gray-900 dark:to-gray-800">
       <header className="bg-white dark:bg-gray-800 shadow-md -mt-5">
         <div className="container mx-auto px-4 py-6 flex items-center space-x-4">
-          <Avatar className="h-16 w-16 border-2 border-sky-700">
-            <AvatarImage src="/placeholder.svg" alt={`${data.TournamentName} logo`} />
-            <AvatarFallback><UserIcon className="h-8 w-8 text-gray-400" /></AvatarFallback>
-          </Avatar>
           <div>
             <h1 className="text-2xl font-bold text-gray-800 dark:text-white">{data.TournamentName}</h1>
             <p className="text-sm text-gray-600 dark:text-gray-300">{data.TournamentWhere}</p>
