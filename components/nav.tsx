@@ -51,7 +51,7 @@ const navigation = [
     },
     {
         name: 'Competiciones',
-        href: '/competiciones',
+        href: '/competition',
         subNavigation: [],
         callsToAction: []
     },

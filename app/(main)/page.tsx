@@ -68,10 +68,10 @@ export default async function Page() {
                 <b>Principado de Asturias</b>
               </h1>
               {/* <p className="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">Página web oficial de la Federación de Tiro con Arco del principado de asturias, en esta web encontrarás toda la actualidad del tiro con arco en Asturias así cómo la información de competiciones y eventos oficiales.</p> */}
-              <a href="#" className="inline-flex items-center justify-center px-5 py-3 mr-3 text-base font-medium text-center text-white rounded-lg bg-sky-700 border-2 border-white hover:bg-sky-800 focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900">
+              <Link href="/federacion/clubes" className="inline-flex items-center justify-center px-5 py-3 mr-3 text-base font-medium text-center text-white rounded-lg bg-sky-700 border-2 border-white hover:bg-sky-800 focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900">
                 Fedérate
                 <svg className="w-5 h-5 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-              </a>
+              </Link>
               <Link href="/contacto" className="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center text-white border-2 border-white rounded-lg hover:bg-gray-100/10">
                 Contacto
               </Link>
@@ -111,16 +111,16 @@ export default async function Page() {
                     Fedérate para poder empezar a practicar el tiro con arco en el Principado de Asturias.
                   </p>
                 </div>
-                <a href="#" className="inline-flex items-center justify-center px-8 py-3 mr-3 font-bold text-lg text-center text-sky-700 rounded-lg bg-white hover:bg-gray-200">
+                <Link href="/federacion/clubes" className="inline-flex items-center justify-center px-8 py-3 mr-3 font-bold text-lg text-center text-sky-700 rounded-lg bg-white hover:bg-gray-200">
                   Fedérate
                   <svg className="w-5 h-5 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-                </a>
+                </Link>
                 <div className="text-md mt-6">
                   <p>
                     ¿Necesitas ayuda?
-                    <a href="/contacto " className="border-b ms-2 border-white pb-1">
+                    <Link href="/contacto " className="border-b ms-2 border-white pb-1">
                       Contáctanos
-                    </a>
+                    </Link>
                   </p>
                 </div>
               </div>
@@ -143,7 +143,7 @@ export default async function Page() {
                     <CardContent className="p-4">
                       <div className="text-lg font-semibold">{item.name}</div>
                       <div className="mb-5">{item.date}</div>
-                      <a
+                      <Link
                         href={item.url}
                         target="_blank"
                         rel="noopener noreferrer"
@@ -151,7 +151,7 @@ export default async function Page() {
                       >
                         Leer circular
                         <ArrowRight className="w-5 h-5 ml-2" />
-                      </a>
+                      </Link>
                     </CardContent>
                   </Card>
                 </div>

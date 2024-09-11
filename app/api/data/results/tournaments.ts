@@ -12,8 +12,9 @@ export async function tournaments() {
             `SELECT DISTINCT idTour as TournamentId, TourCode as TournamentCode, TourName as TournamentName, TourWhere as TournamentWhere, TourWhenFrom as TournamentWhenFrom, 
             TourWhenTo as TournamentWhenTo
             FROM tournaments 
+            WHERE fede = ?
             ORDER BY TourWhenFrom, TourWhenTo`, 
-            // [federation]
+            [federation]
         );
         var keyCount = Object.keys(results).length
 
