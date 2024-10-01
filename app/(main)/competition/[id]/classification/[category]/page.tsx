@@ -20,10 +20,10 @@ function decodeArrowString(arrowString: string): any[] {
     if (char === 'G' || char === 'g') return 6;
     if (char === 'F' || char === 'f') return 5;
     if (char === 'E' || char === 'e') return 4;
-    if (char === 'G' || char === 'd') return 3;
-    if (char === 'G' || char === 'c') return 2;
-    if (char === 'G' || char === 'b') return 1;
-    if (char === 'G' || char === 'a') return 0;
+    if (char === 'D' || char === 'd') return 3;
+    if (char === 'C' || char === 'c') return 2;
+    if (char === 'B' || char === 'b') return 1;
+    if (char === 'A' || char === 'a') return 0;
 
     return char;
   });
@@ -46,7 +46,7 @@ function ScoreTable({ arrowString, maxArrows, title }: { arrowString: string, ma
     tableRows.push(
       <TableRow key={i}>
         {rowScores.map((score, index) => (
-          <TableCell key={index}>{score}</TableCell>
+          <TableCell key={index}>{score === 0 ? 'M' : score}</TableCell>
         ))}
         <TableCell className="font-bold">{rowTotal}</TableCell>
       </TableRow>
