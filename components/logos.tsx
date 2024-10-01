@@ -29,7 +29,7 @@ export default function Logos() {
                 <CarouselContent className="-ml-1">
                     <CarouselItem key={1} className="pl-1 basis-1/3 flex place-content-center items-center">
                         <a href="https://www.asturias.es/" target="_blank" className="hover:scale-105 transition-all">
-                            <img src="/img/logos/principado.png" className="h-16" alt="" />
+                            <img src="/img/logos/principado.jpg" className="h-16" alt="" />
                         </a>
                     </CarouselItem>
                     <CarouselItem key={2} className="pl-1 basis-1/3 flex place-content-center items-center">
@@ -57,7 +57,7 @@ export default function Logos() {
             <div className="hidden md:block">
                 <div className="container flex place-content-center items-center py-2 gap-4 justify-between">
                     <a href="https://www.asturias.es/" target="_blank" className="hover:scale-105 transition-all">
-                        <img src="/img/logos/principado.png" className="h-14" alt="" />
+                        <img src="/img/logos/principado.jpg" className="h-20" alt="" />
                     </a>
                     <a href="#" target="_blank" className="hover:scale-105 transition-all">
                         <img src="/img/logos/logo.png" className="h-20" alt="" />

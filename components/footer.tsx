@@ -19,7 +19,7 @@ export default function Footer() {
                     <div className="mb-6 md:mb-0">
                         <div className="flex lg:flex-1">
                             <div>
-                                <span className="sr-only">Federación Asturiana de Tiro con Arco</span>
+                                <span className="sr-only">Federación de Tiro con Arco del Principado de Asturias</span>
                                 <img className="h-14 w-auto" src="/img/logos/logo.png" alt="" height={55} width={55} />
                             </div>
                             <div className='ms-2 mt-1'>
