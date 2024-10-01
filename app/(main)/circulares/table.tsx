@@ -28,44 +28,50 @@ import {
 } from "@/components/ui/table"
 import Link from "next/link"
 
-const data: Payment[] = [
+const data = [
     {
-        id: "1",
-        date: "30/06/2024",
-        url: "http://www.rftapa.com/docs/circulares/cir_414.pdf",
-        name: "Preselección Recurvo y Compuesto 2023-2024",
+      id: "1",
+      date: "22/09/2024",
+      url: "/docs/circulares/cir_424.pdf",
+      name: "Calendario Temporada 2024/2025",
     },
     {
-        id: "2",
-        date: "30/06/2024",
-        url: "http://www.rftapa.com/docs/circulares/cir_413.pdf",
-        name: "Preselección Sub-15, Sub-18, Sub-21 y Plus 50 2023-2024",
+      id: "2",
+      date: "11/09/2024",
+      url: "/docs/circulares/cir_423.pdf",
+      name: "Acta proclamación DEFINITIVA presidente FTAPA",
     },
     {
-        id: "3",
-        date: "28/06/2024",
-        url: "http://www.rftapa.com/docs/circulares/cir_412.pdf",
-        name: "Candidaturas definitivas Asamblea FTAPA 2024",
+      id: "3",
+      date: "03/09/2024",
+      url: "/docs/circulares/cir_422.pdf",
+      name: "Acta proclamación presidente FTAPA",
     },
     {
-        id: "4",
-        date: "21/06/2024",
-        url: "http://www.rftapa.com/docs/circulares/cir_411.pdf",
-        name: "Preselección Asturiana Tradicional, Longbow y Desnudo Aire Libre 2023-2024",
+      id: "4",
+      date: "15/08/2024",
+      url: "/docs/circulares/cir_421.pdf",
+      name: "RECORDS ASTURIAS",
     },
     {
-        id: "5",
-        date: "20/06/2024",
-        url: "http://www.rftapa.com/docs/circulares/cir_410.pdf",
-        name: "Candidaturas provisionales Asamblea FTAPA 2024",
+      id: "5",
+      date: "14/08/2024",
+      url: "/docs/circulares/cir_420.pdf",
+      name: "Campeonato de Asturias Equipos 3D 2023-2024",
     },
     {
-        id: "6",
-        date: "18/06/2024",
-        url: "http://www.rftapa.com/docs/circulares/cir_409.pdf",
-        name: "Trofeo FTAPA para Personas con Discapacidad Temporada 2023-2024",
+      id: "6",
+      date: "09/08/2024",
+      url: "/docs/circulares/cir_419.pdf",
+      name: "Candidatos oficiales presidencia FTAPA",
     },
-]
+    {
+      id: "7",
+      date: "05/08/2024",
+      url: "/docs/circulares/cir_418.pdf",
+      name: "Candidatos provisionales presidencia FTAPA",
+    },
+  ]
 
 export type Payment = {
     id: string

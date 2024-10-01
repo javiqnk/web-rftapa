@@ -9,7 +9,53 @@ import {
 
 import DataTable from './table'
 
+const data = [
+    {
+      id: "1",
+      date: "22/09/2024",
+      url: "/docs/circulares/cir_424.pdf",
+      name: "Calendario Temporada 2024/2025",
+    },
+    {
+      id: "2",
+      date: "11/09/2024",
+      url: "/docs/circulares/cir_423.pdf",
+      name: "Acta proclamación DEFINITIVA presidente FTAPA",
+    },
+    {
+      id: "3",
+      date: "03/09/2024",
+      url: "/docs/circulares/cir_422.pdf",
+      name: "Acta proclamación presidente FTAPA",
+    },
+    {
+      id: "4",
+      date: "15/08/2024",
+      url: "/docs/circulares/cir_421.pdf",
+      name: "RECORDS ASTURIAS",
+    },
+    {
+      id: "5",
+      date: "14/08/2024",
+      url: "/docs/circulares/cir_420.pdf",
+      name: "Campeonato de Asturias Equipos 3D 2023-2024",
+    },
+    {
+      id: "6",
+      date: "09/08/2024",
+      url: "/docs/circulares/cir_419.pdf",
+      name: "Candidatos oficiales presidencia FTAPA",
+    },
+    {
+      id: "7",
+      date: "05/08/2024",
+      url: "/docs/circulares/cir_418.pdf",
+      name: "Candidatos provisionales presidencia FTAPA",
+    },
+  ]
+
 export default async function Page() {
+    const lastFourCirculars = data.slice(0, 4);
 
     return (
         <>
@@ -28,54 +74,20 @@ export default async function Page() {
             <div className="my-8 mt-12 container">
                 <h3 className="my-4 text-xl md:text-3xl">Últimas circulares:</h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-                    <div className="flex flex-col text-gray-700 bg-white dark:bg-slate-900 shadow border rounded-md">
-                        <div className="p-4 h-[4.5rem] overflow-hidden">
-                            <h5 className="text-xl antialiased font-semibold leading-snug tracking-normal flex text-gray-900 dark:text-white">
-                                <DocumentArrowDownIcon className="h-7 w-7 me-2 mt-1" /> Preselección Recurvo y Compuesto 2023-2024
-                            </h5>
+                    {lastFourCirculars.map((circular) => (
+                        <div key={circular.id} className="flex flex-col text-gray-700 bg-white dark:bg-slate-900 shadow border rounded-md">
+                            <div className="p-4 h-[4.5rem] overflow-hidden">
+                                <h5 className="text-xl antialiased font-semibold leading-snug tracking-normal flex text-gray-900 dark:text-white">
+                                    <DocumentArrowDownIcon className="h-7 w-7 me-2 mt-1" /> {circular.name}
+                                </h5>
+                            </div>
+                            <div className="p-4 text-end">
+                                <Link href={circular.url} target="_blank">
+                                    <Button>Descargar <ArrowDownTrayIcon className="h-5 w-5 flex-none text-white ms-2 dark:text-gray-700" /></Button>
+                                </Link>
+                            </div>
                         </div>
-                        <div className="p-4 text-end">
-                            <Link href="http://www.rftapa.com/docs/circulares/cir_414.pdf" target="_blank">
-                                <Button>Descargar <ArrowDownTrayIcon className="h-5 w-5 flex-none text-white ms-2 dark:text-gray-700" /></Button>
-                            </Link>
-                        </div>
-                    </div>
-                    <div className="flex flex-col text-gray-700 bg-white dark:bg-slate-900 shadow border rounded-md">
-                        <div className="p-4 h-[4.5rem] overflow-hidden">
-                            <h5 className="text-xl antialiased font-semibold leading-snug tracking-normal flex text-gray-900 dark:text-white">
-                                <DocumentArrowDownIcon className="h-7 w-7 me-2 mt-1" /> Preselección Sub-15, Sub-18, Sub-21 y Plus 50 2023-2024
-                            </h5>
-                        </div>
-                        <div className="p-4 text-end">
-                            <Link href="http://www.rftapa.com/docs/circulares/cir_413.pdf" target="_blank">
-                                <Button>Descargar <ArrowDownTrayIcon className="h-5 w-5 flex-none text-white ms-2 dark:text-gray-700" /></Button>
-                            </Link>
-                        </div>
-                    </div>
-                    <div className="flex flex-col text-gray-700 bg-white dark:bg-slate-900 shadow border rounded-md">
-                        <div className="p-4 h-[4.5rem] overflow-hidden">
-                            <h5 className="text-xl antialiased font-semibold leading-snug tracking-normal flex text-gray-900 dark:text-white">
-                                <DocumentArrowDownIcon className="h-7 w-7 me-2 mt-1" /> Candidaturas definitivas Asamblea FTAPA 2024
-                            </h5>
-                        </div>
-                        <div className="p-4 text-end">
-                            <Link href="Candidaturas definitivas Asamblea FTAPA 2024" target="_blank">
-                                <Button>Descargar <ArrowDownTrayIcon className="h-5 w-5 flex-none text-white ms-2 dark:text-gray-700" /></Button>
-                            </Link>
-                        </div>
-                    </div>
-                    <div className="flex flex-col text-gray-700 bg-white dark:bg-slate-900 shadow border rounded-md">
-                        <div className="p-4 h-[4.5rem] overflow-hidden">
-                            <h5 className="text-xl antialiased font-semibold leading-snug tracking-normal flex text-gray-900 dark:text-white">
-                                <DocumentArrowDownIcon className="h-7 w-7 me-2 mt-1" /> Candidaturas provisionales Asamblea FTAPA 2024
-                            </h5>
-                        </div>
-                        <div className="p-4 text-end">
-                            <Link href="http://www.rftapa.com/docs/circulares/cir_410.pdf" target="_blank">
-                                <Button>Descargar <ArrowDownTrayIcon className="h-5 w-5 flex-none text-white ms-2 dark:text-gray-700" /></Button>
-                            </Link>
-                        </div>
-                    </div>
+                    ))}
                 </div>
             </div>
             <div className="my-8 container">
@@ -83,5 +95,4 @@ export default async function Page() {
             </div>
         </>
     );
-
 }
