@@ -2,9 +2,7 @@ import DataTable from "./table";
 
 export default async function Page() {
 
-    return ""
-
-    const data = await fetch('https://ftapa.addon-sport.com/api/federated/v1/athletes').then((res) =>
+    const data = await fetch('https://ftapa.com/api/federated/v1/athletes').then((res) =>
         res.json()
     )
 

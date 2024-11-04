@@ -4,7 +4,7 @@ import DataTable from "./table";
 export default async function Page() {
 
     revalidatePath('/api/federated/v1/competitions')
-    const data = await fetch('https://ftapa.addon-sport.com/api/results/v1/competitions').then((res) =>
+    const data = await fetch('https://ftapa.com/api/results/v1/competitions').then((res) =>
         res.json()
     )
 

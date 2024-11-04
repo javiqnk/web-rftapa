@@ -76,7 +76,7 @@ export default function Footer() {
                 </div>
                 <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
                 <div className="sm:flex sm:items-center sm:justify-between">
-                    <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">© {year} <a href="https://www.ceautomatica.es/" className="hover:underline">Federación Asturiana de Tiro con Arco</a> - <b>Powered by <a className="text-[#3F84A6] font-extrabold" target="_blank" href="https://addon-sport.com/">Add On Sport</a></b>
+                    <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">© {year} <a href="https://www.ftapa.com/" className="hover:underline">Federación Asturiana de Tiro con Arco</a> - <b>Powered by <a className="text-[#3F84A6] font-extrabold" target="_blank" href="https://addon-sport.com/">Add On Sport</a></b>
                     </span>
                     <div className="flex mt-4 sm:justify-center sm:mt-0">
                         <a href="https://www.facebook.com/rftapa" className="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5">
