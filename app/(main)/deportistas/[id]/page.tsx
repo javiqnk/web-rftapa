@@ -76,23 +76,23 @@ export default async function Page({
                     Información
                 </h1>
                 <div className="block mt-5 py-4 px-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-                    <div className="md:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                    <div className="md:grid grid-cols-1 md:grid-cols-3 gap-4">
                         <div>
                             Deportista: <b>{fedeData.Name} {fedeData.Surname}</b>
                         </div>
                         <div>
                             Sexo: <b>{fedeData.Gender} </b>
                         </div>
-                        <div>
+                        {/* <div>
                             Edad: <b>{Edad(fedeData.BirthDate)} AÑOS</b>
-                        </div>
+                        </div> */}
                         <div>
                             Provincia: <b>{fedeData.Province} </b>
                         </div>
                         <div>
                             Licencia club: <b>{fedeData.ClubLicense} </b>
                         </div>
-                        <div className="col-span-3">
+                        <div className="col-span-2">
                             Club: <b>{fedeData.ClubName}</b>
                         </div>
                     </div>
