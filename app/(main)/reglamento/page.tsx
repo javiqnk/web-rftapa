@@ -6,8 +6,11 @@ import {
     DocumentArrowDownIcon,
     ArrowLongRightIcon
 } from '@heroicons/react/24/outline'
+import { getDocumentsByCategory } from "@/data/documents";
 
 export default async function Page() {
+
+    const data = await getDocumentsByCategory(8)
 
     return (
         <>
@@ -25,54 +28,21 @@ export default async function Page() {
             </header>
             <div className="my-8 container">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                {data?.map((circular) => (
                     <div className="flex flex-col text-gray-700 bg-white dark:bg-slate-900 shadow border rounded-md">
                         <div className="p-4">
                             <h5 className="text-xl antialiased font-semibold leading-snug tracking-normal flex text-gray-900 dark:text-white">
-                                <DocumentArrowDownIcon className="h-7 w-7 me-2 mt-1" /> Cuadro de distancias y dianas
+                                <DocumentArrowDownIcon className="h-7 w-7 me-2 mt-1" /> {circular?.wdfFileNameToShow}
                             </h5>
                         </div>
                         <div className="p-4 pt-0 text-end">
-                            <Link href="/docs/reglamento/cuadro-edades-distancias-y-dianas.pdf" target="_blank">
+                            <Link href={circular?.wdfPublicURL} target="_blank">
                                 <Button>Descargar <ArrowDownTrayIcon className="h-5 w-5 flex-none text-white ms-2 dark:text-gray-700" /></Button>
                             </Link>
                         </div>
                     </div>
-                    <div className="flex flex-col text-gray-700 bg-white dark:bg-slate-900 shadow border rounded-md">
-                        <div className="p-4">
-                            <h5 className="text-xl antialiased font-semibold leading-snug tracking-normal flex text-gray-900 dark:text-white">
-                                <DocumentArrowDownIcon className="h-7 w-7 me-2 mt-1" /> Reglamento del Comité de Jueces
-                            </h5>
-                        </div>
-                        <div className="p-4 pt-0 text-end">
-                            <Link href="/docs/reglamento/reglamento-jueces.pdf" target="_blank">
-                                <Button>Descargar <ArrowDownTrayIcon className="h-5 w-5 flex-none text-white ms-2 dark:text-gray-700" /></Button>
-                            </Link>
-                        </div>
-                    </div>
-                    <div className="flex flex-col text-gray-700 bg-white dark:bg-slate-900 shadow border rounded-md">
-                        <div className="p-4">
-                            <h5 className="text-xl antialiased font-semibold leading-snug tracking-normal flex text-gray-900 dark:text-white">
-                                <DocumentArrowDownIcon className="h-7 w-7 me-2 mt-1" /> Reglamento disciplinario FTAPA
-                            </h5>
-                        </div>
-                        <div className="p-4 pt-0 text-end">
-                            <Link href="/docs/reglamento/reglamento-disciplinario.pdf" target="_blank">
-                                <Button>Descargar <ArrowDownTrayIcon className="h-5 w-5 flex-none text-white ms-2 dark:text-gray-700" /></Button>
-                            </Link>
-                        </div>
-                    </div>
-                    <div className="flex flex-col text-gray-700 bg-white dark:bg-slate-900 shadow border rounded-md">
-                        <div className="p-4">
-                            <h5 className="text-xl antialiased font-semibold leading-snug tracking-normal flex text-gray-900 dark:text-white">
-                                <DocumentArrowDownIcon className="h-7 w-7 me-2 mt-1" /> Reglamento préstamo de materiales
-                            </h5>
-                        </div>
-                        <div className="p-4 pt-0 text-end">
-                            <Link href="/docs/reglamento/reglamento-material.pdf" target="_blank">
-                                <Button>Descargar <ArrowDownTrayIcon className="h-5 w-5 flex-none text-white ms-2 dark:text-gray-700" /></Button>
-                            </Link>
-                        </div>
-                    </div>
+                ))}
+
                 </div>
             </div>
             <div className="my-8 container">

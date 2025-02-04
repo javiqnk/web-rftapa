@@ -13,54 +13,13 @@ import {
 } from "@/components/ui/carousel"
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowRight } from "lucide-react";
-
-const data = [
-  {
-    id: "1",
-    date: "22/09/2024",
-    url: "/docs/circulares/cir_424.pdf",
-    name: "Calendario Temporada 2024/2025",
-  },
-  {
-    id: "2",
-    date: "11/09/2024",
-    url: "/docs/circulares/cir_423.pdf",
-    name: "Acta proclamación DEFINITIVA presidente FTAPA",
-  },
-  {
-    id: "3",
-    date: "03/09/2024",
-    url: "/docs/circulares/cir_422.pdf",
-    name: "Acta proclamación presidente FTAPA",
-  },
-  {
-    id: "4",
-    date: "15/08/2024",
-    url: "/docs/circulares/cir_421.pdf",
-    name: "RECORDS ASTURIAS",
-  },
-  {
-    id: "5",
-    date: "14/08/2024",
-    url: "/docs/circulares/cir_420.pdf",
-    name: "Campeonato de Asturias Equipos 3D 2023-2024",
-  },
-  {
-    id: "6",
-    date: "09/08/2024",
-    url: "/docs/circulares/cir_419.pdf",
-    name: "Candidatos oficiales presidencia FTAPA",
-  },
-  {
-    id: "7",
-    date: "05/08/2024",
-    url: "/docs/circulares/cir_418.pdf",
-    name: "Candidatos provisionales presidencia FTAPA",
-  },
-]
+import { getDocuments, getDocumentsExceptCategory } from "@/data/documents";
 
 
 export default async function Page() {
+
+  const data = await getDocumentsExceptCategory(8)
+  const lastFourCirculars = data?.slice(0, 5);
 
   return (
     <>
@@ -142,15 +101,15 @@ export default async function Page() {
         </div>
         <Carousel className="w-[92%] md:w-[96%] mx-auto">
           <CarouselContent className="-ml-1">
-            {data.map((item) => (
-              <CarouselItem key={item.id} className="pl-1 md:basis-1/2 lg:basis-1/3">
+            {data?.map((item) => (
+              <CarouselItem key={item.webDocFileID} className="pl-1 md:basis-1/2 lg:basis-1/3">
                 <div className="p-1">
                   <Card>
                     <CardContent className="p-4">
-                      <div className="text-lg font-semibold">{item.name}</div>
-                      <div className="mb-5">{item.date}</div>
+                      <div className="text-lg font-semibold">{item.wdfFileNameToShow}</div>
+                      <div className="mb-5">{new Date(item.wdfPublicationDate).toLocaleDateString()}</div>
                       <Link
-                        href={item.url}
+                        href={item?.wdfPublicURL}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center justify-center text-base font-medium hover:underline"

@@ -16,7 +16,6 @@ import {
 import { ArrowUpDown, ChevronDown, Download } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
-
 import { Input } from "@/components/ui/input"
 import {
     Table,
@@ -27,62 +26,11 @@ import {
     TableRow,
 } from "@/components/ui/table"
 import Link from "next/link"
+import { Badge } from "@/components/ui/badge"
 
-const data = [
+export const columns: ColumnDef<any>[] = [
     {
-      id: "1",
-      date: "22/09/2024",
-      url: "/docs/circulares/cir_424.pdf",
-      name: "Calendario Temporada 2024/2025",
-    },
-    {
-      id: "2",
-      date: "11/09/2024",
-      url: "/docs/circulares/cir_423.pdf",
-      name: "Acta proclamación DEFINITIVA presidente FTAPA",
-    },
-    {
-      id: "3",
-      date: "03/09/2024",
-      url: "/docs/circulares/cir_422.pdf",
-      name: "Acta proclamación presidente FTAPA",
-    },
-    {
-      id: "4",
-      date: "15/08/2024",
-      url: "/docs/circulares/cir_421.pdf",
-      name: "RECORDS ASTURIAS",
-    },
-    {
-      id: "5",
-      date: "14/08/2024",
-      url: "/docs/circulares/cir_420.pdf",
-      name: "Campeonato de Asturias Equipos 3D 2023-2024",
-    },
-    {
-      id: "6",
-      date: "09/08/2024",
-      url: "/docs/circulares/cir_419.pdf",
-      name: "Candidatos oficiales presidencia FTAPA",
-    },
-    {
-      id: "7",
-      date: "05/08/2024",
-      url: "/docs/circulares/cir_418.pdf",
-      name: "Candidatos provisionales presidencia FTAPA",
-    },
-  ]
-
-export type Payment = {
-    id: string
-    url: string
-    date: any
-    name: string
-}
-
-export const columns: ColumnDef<Payment>[] = [
-    {
-        accessorKey: "name",
+        accessorKey: "wdfFileNameToShow",
         header: ({ column }) => {
             return (
                 <Button
@@ -95,35 +43,46 @@ export const columns: ColumnDef<Payment>[] = [
                 </Button>
             )
         },
-        cell: ({ row }) => <div className="capitalize">{row.getValue("name")}</div>,
+        cell: ({ row }) => <div className="capitalize">{row.getValue("wdfFileNameToShow")}</div>,
     },
     {
-        accessorKey: "date",
+        accessorKey: "wdfPublicationDate",
         header: () => <div className="">Fecha</div>,
         cell: ({ row }) => {
-
-            return <div className=" font-medium">{row.getValue("date")}</div>
+            const date = new Date(row.getValue("wdfPublicationDate")).toLocaleDateString()
+            return <div className="font-medium">{date}</div>
         },
     },
     {
-        accessorKey: "url",
+        accessorKey: "wdfFileExtension",
+        header: () => <div className="">Extensión</div>,
+        cell: ({ row }) => {
+            return <Badge>.{row.getValue("wdfFileExtension")}</Badge>
+        },
+    },
+    {
+        accessorKey: "wdfPublicURL",
         header: () => <div className="text-center">Descargar</div>,
         cell: ({ row }) => {
-
-            return <div className="text-center"> 
-                <a href={row.getValue("url")} target="_blank" className="font-medium cursor-pointer text-center hover:fill-white flex justify-center dark:text-gray-400 dark:hover:text-white text-gray-600 hover:text-gray-900"><Download className="h-5 w-5 text-inherit" /></a>
-            </div> 
+            return (
+                <div className="text-center">
+                    <a
+                        href={row.getValue("wdfPublicURL")}
+                        target="_blank"
+                        className="font-medium cursor-pointer text-center hover:fill-white flex justify-center dark:text-gray-400 dark:hover:text-white text-gray-600 hover:text-gray-900"
+                    >
+                        <Download className="h-5 w-5 text-inherit" />
+                    </a>
+                </div>
+            )
         },
     }
 ]
 
-export default function DataTable() {
+export default function DataTable({ data }: { data: any[] }) {
     const [sorting, setSorting] = React.useState<SortingState>([])
-    const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>(
-        []
-    )
-    const [columnVisibility, setColumnVisibility] =
-        React.useState<VisibilityState>({})
+    const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>([])
+    const [columnVisibility, setColumnVisibility] = React.useState<VisibilityState>({})
     const [rowSelection, setRowSelection] = React.useState({})
 
     const table = useReactTable({
@@ -150,9 +109,9 @@ export default function DataTable() {
             <div className="flex items-center py-4">
                 <Input
                     placeholder="Buscar por el nombre del archivo..."
-                    value={(table.getColumn("name")?.getFilterValue() as string) ?? ""}
+                    value={(table.getColumn("wdfFileNameToShow")?.getFilterValue() as string) ?? ""}
                     onChange={(event) =>
-                        table.getColumn("name")?.setFilterValue(event.target.value)
+                        table.getColumn("wdfFileNameToShow")?.setFilterValue(event.target.value)
                     }
                     className="max-w-sm"
                 />
