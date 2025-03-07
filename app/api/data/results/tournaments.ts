@@ -12,7 +12,7 @@ export async function tournaments() {
             `SELECT DISTINCT idTour as TournamentId, TourCode as TournamentCode, TourName as TournamentName, TourWhere as TournamentWhere, TourWhenFrom as TournamentWhenFrom, 
             TourWhenTo as TournamentWhenTo
             FROM tournaments 
-            WHERE fede = ?
+            WHERE email = ?
             ORDER BY TourWhenFrom, TourWhenTo`, 
             [federation]
         );

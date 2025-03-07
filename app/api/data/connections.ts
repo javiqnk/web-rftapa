@@ -1,7 +1,7 @@
 const user = "api_main"
 const pass = "2782@nJgv"
 
-export const federation = "PP Asturias"
+export const federation = "rftapa@hotmail.com"
 
 export const dbConfigFederated = {
     host: "5.250.188.228",

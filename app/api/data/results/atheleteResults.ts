@@ -1,6 +1,6 @@
 "use server";
 
-import { dbConfigResults, federation } from "@/app/api/data/connections";
+import { dbConfigResults } from "@/app/api/data/connections";
 import mysql, { RowDataPacket } from 'mysql2/promise';
 
 export async function atheleteResults(id: any) {
