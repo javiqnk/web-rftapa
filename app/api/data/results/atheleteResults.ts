@@ -13,7 +13,7 @@ export async function atheleteResults(id: any) {
             FROM enQual t1
             INNER JOIN tournaments t2 ON t2.TourCode = t1.tourCode
             WHERE t1.licencia = ?
-            ORDER BY TourWhenTo DESC`,
+            ORDER BY TourWhenTo ASC`,
             [id]
         );
         var keyCount = Object.keys(results).length
