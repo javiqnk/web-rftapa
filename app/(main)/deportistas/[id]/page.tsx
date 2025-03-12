@@ -31,6 +31,8 @@ export default async function Page({
 
 }) {
 
+    return
+
     revalidatePath('/api/federated/v1/athlete/' + id)
     const dataApi = await fetch('https://ftapa.com/api/federated/v1/athlete/' + id).then((res) =>
         res.json()

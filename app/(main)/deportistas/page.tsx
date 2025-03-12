@@ -2,9 +2,11 @@ import DataTable from "./table";
 
 export default async function Page() {
 
-    const data = await fetch('https://ftapa.com/api/federated/v1/athletes').then((res) =>
-        res.json()
-    )
+    return <></>
+
+    // const data = await fetch('https://ftapa.com/api/federated/v1/athletes').then((res) =>
+    //     res.json()
+    // )
 
     return (
         <>
@@ -22,7 +24,7 @@ export default async function Page() {
             </header>
 
             <div className="my-8 container">
-                <DataTable data={data.data} />
+                {/* <DataTable data={data.data} /> */}
             </div>
         </>
     );
