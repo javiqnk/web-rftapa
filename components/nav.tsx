@@ -55,12 +55,12 @@ const navigation = [
         subNavigation: [],
         callsToAction: []
     },
-    {
-        name: 'Deportistas',
-        href: '/deportistas',
-        subNavigation: [],
-        callsToAction: []
-    },
+    // {
+    //     name: 'Deportistas',
+    //     href: '/deportistas',
+    //     subNavigation: [],
+    //     callsToAction: []
+    // },
     {
         name: 'Circulares', href: '/circulares', subNavigation: [], callsToAction: []
     },
