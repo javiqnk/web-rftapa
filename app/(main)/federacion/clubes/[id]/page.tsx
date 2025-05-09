@@ -1,6 +1,6 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Card, CardContent } from "@/components/ui/card"
-import { UserIcon, PhoneIcon, MapPinIcon, Globe2 } from "lucide-react"
+import { UserIcon, PhoneIcon, MapPinIcon, Globe2, Shield } from "lucide-react"
 import { Facebook, Twitter, Instagram, Youtube } from "lucide-react"
 import Link from "next/link"
 import { revalidatePath } from 'next/cache'
@@ -11,7 +11,7 @@ export default async function Component({
   params: { id: string }
 }) {
   revalidatePath('/api/federated/v1/club/' + id)
-  const dataApi = await fetch('https://ftapa.com/api/federated/v1/club/' + id).then((res) =>
+  const dataApi = await fetch('http://localhost:3001/api/federated/v1/club/' + id).then((res) =>
     res.json()
   )
 
@@ -22,12 +22,12 @@ export default async function Component({
       <header className="bg-white dark:bg-gray-800 shadow-md -mt-5">
         <div className="container mx-auto px-4 py-6 flex items-center space-x-4">
           <Avatar className="h-16 w-16 border-2 border-sky-700">
-            <AvatarImage src={`https://docs.rfeta.es/${fedeData.ClubPhoto}`} alt={`${fedeData.ClubName} logo`} />
-            <AvatarFallback><UserIcon className="h-8 w-8 text-gray-400" /></AvatarFallback>
+            <AvatarImage src={`${fedeData.ClubPhoto}`} alt={`${fedeData.ClubName} logo`} />
+            <AvatarFallback><Shield className="h-8 w-8 text-gray-400" /></AvatarFallback>
           </Avatar>
           <div>
             <h1 className="text-2xl font-bold text-gray-800 dark:text-white">{fedeData.ClubName}</h1>
-            <p className="text-sm text-gray-600 dark:text-gray-300">{fedeData.ClubCity}, {fedeData.Provincia}</p>
+            <p className="text-sm text-gray-600 dark:text-gray-300">{fedeData.municipalityName}, {fedeData.municipalityProvince}</p>
           </div>
         </div>
       </header>
@@ -41,9 +41,9 @@ export default async function Component({
                 <MapPinIcon className="w-5 h-5 mr-2" />
                 <h3 className="font-semibold">Dirección</h3>
               </div>
-              <p className="text-sm text-gray-600 dark:text-gray-300">{fedeData.Domicilio}</p>
-              <p className="text-sm text-gray-600 dark:text-gray-300">{fedeData.CodPostal} {fedeData.Municipio}</p>
-              <p className="text-sm text-gray-600 dark:text-gray-300">{fedeData.Provincia}</p>
+              <p className="text-sm text-gray-600 dark:text-gray-300">{fedeData.addressDirection}</p>
+              <p className="text-sm text-gray-600 dark:text-gray-300">{fedeData.municipalityZipCode} {fedeData.municipalityName}</p>
+              <p className="text-sm text-gray-600 dark:text-gray-300">{fedeData.municipalityProvince}</p>
             </CardContent>
           </Card>
 
@@ -53,10 +53,10 @@ export default async function Component({
                 <PhoneIcon className="w-5 h-5 mr-2" />
                 <h3 className="font-semibold">Contacto</h3>
               </div>
-              <p className="text-sm text-gray-600 dark:text-gray-300">Tel: {fedeData.Tel1}</p>
-              {fedeData.Tel2 && <p className="text-sm text-gray-600 dark:text-gray-300">Tel 2: {fedeData.Tel2}</p>}
-              <p className="text-sm text-gray-600 dark:text-gray-300">Email: {fedeData.Email1}</p>
-              {fedeData.Email2 && <p className="text-sm text-gray-600 dark:text-gray-300">Email 2: {fedeData.Email2}</p>}
+              <p className="text-sm text-gray-600 dark:text-gray-300">Tel: {fedeData.ciTelephone1}</p>
+              {fedeData.Tel2 && <p className="text-sm text-gray-600 dark:text-gray-300">Tel 2: {fedeData.ciTelephone2}</p>}
+              <p className="text-sm text-gray-600 dark:text-gray-300">Email: {fedeData.ciEmail1}</p>
+              {fedeData.Email2 && <p className="text-sm text-gray-600 dark:text-gray-300">Email 2: {fedeData.ciEmail2}</p>}
             </CardContent>
           </Card>
 
@@ -66,27 +66,27 @@ export default async function Component({
                 <Globe2 className="w-5 h-5 mr-2" />
                 <h3 className="font-semibold">Web y Redes Sociales</h3>
               </div>
-              <Link href={`https://${fedeData.Web}`} target="_blank" rel="noopener noreferrer" className="text-sm text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300">
-                {fedeData.Web}
+              <Link href={`https://${fedeData.rrssWebURL}`} target="_blank" rel="noopener noreferrer" className="text-sm text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300">
+                {fedeData.rrssWebURL}
               </Link>
               <div className="flex mt-4 space-x-4">
-                {fedeData.facebook && (
-                  <Link href={fedeData.facebook} target="_blank" rel="noopener noreferrer">
+                {fedeData.rrssFacebook && (
+                  <Link href={fedeData.rrssFacebook} target="_blank" rel="noopener noreferrer">
                     <Facebook className="w-5 h-5 text-gray-600 hover:text-blue-500 dark:text-gray-400 dark:hover:text-blue-300" />
                   </Link>
                 )}
-                {fedeData.twitter && (
-                  <Link href={fedeData.twitter} target="_blank" rel="noopener noreferrer">
+                {fedeData.rrssX && (
+                  <Link href={fedeData.rrssX} target="_blank" rel="noopener noreferrer">
                     <Twitter className="w-5 h-5 text-gray-600 hover:text-blue-400 dark:text-gray-400 dark:hover:text-blue-300" />
                   </Link>
                 )}
-                {fedeData.instagram && (
-                  <Link href={`https://www.instagram.com/${fedeData.instagram}`} target="_blank" rel="noopener noreferrer">
+                {fedeData.rrssInstagram && (
+                  <Link href={`${fedeData.rrssInstagram}`} target="_blank" rel="noopener noreferrer">
                     <Instagram className="w-5 h-5 text-gray-600 hover:text-pink-500 dark:text-gray-400 dark:hover:text-pink-300" />
                   </Link>
                 )}
-                {fedeData.youtube && (
-                  <Link href={fedeData.youtube} target="_blank" rel="noopener noreferrer">
+                {fedeData.rrssYoutube && (
+                  <Link href={fedeData.rrssYoutube} target="_blank" rel="noopener noreferrer">
                     <Youtube className="w-5 h-5 text-gray-600 hover:text-red-500 dark:text-gray-400 dark:hover:text-red-300" />
                   </Link>
                 )}

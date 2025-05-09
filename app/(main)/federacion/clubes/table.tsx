@@ -15,7 +15,7 @@ import {
     getSortedRowModel,
     useReactTable,
 } from "@tanstack/react-table"
-import { ArrowUpDown } from "lucide-react"
+import { ArrowUpDown, Shield } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -50,8 +50,8 @@ export const columns: ColumnDef<Payment>[] = [
         header: () => <div className="">Imagen</div>,
         cell: ({ row }) => (
             <Avatar className="h-12 w-12 border">
-                <AvatarImage src={"https://docs.rfeta.es/" + row.getValue("ClubPhoto")} alt="Logo del club" />
-                <AvatarFallback><UserIcon className="h-8 w-8 mt-1 text-gray-600" /></AvatarFallback>
+                <AvatarImage src={row.getValue("ClubPhoto")} alt="Logo del club" />
+                <AvatarFallback><Shield className="h-8 w-8 mt-1 text-gray-600" /></AvatarFallback>
             </Avatar>
         ),
     },
@@ -68,11 +68,6 @@ export const columns: ColumnDef<Payment>[] = [
             </Button>
         ),
         cell: ({ row }) => <div className="capitalize font-medium">{row.getValue("ClubName")}</div>,
-    },
-    {
-        accessorKey: "ClubCity",
-        header: () => <div className="">Club</div>,
-        cell: ({ row }) => <div className="capitalize">{row.getValue("ClubCity")}</div>,
     }
 ]
 

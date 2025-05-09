@@ -1,6 +1,6 @@
 "use server";
 
-import { dbConfigFederated, federation } from "../connections";
+import { dbConfigFederated, federationFed as federation } from "../connections";
 import mysql, { RowDataPacket } from 'mysql2/promise';
 
 export async function clubs() {
@@ -8,9 +8,9 @@ export async function clubs() {
     try {
         const connection = await mysql.createConnection(dbConfigFederated)
         const [results, fields] = await connection.query<RowDataPacket[]>(
-            `SELECT DISTINCT idClub as ClubID, t1.Nombre as ClubName, t1.logo as ClubPhoto, t1.Municipio as ClubCity
-            FROM clubes t1 
-            WHERE Estado = 1 AND Federacion = ?`, [federation]
+            `SELECT clubName as ClubName, dcpPublicURL as ClubPhoto, clubID as ClubID
+            FROM Clubs t1 LEFT JOIN DocClubPhotos t2 ON t1.clubID = t2.dcpClubID
+            WHERE clubEnableFlag = 1 AND clubFederationID = ?`, [federation]
 
         );
         var keyCount = Object.keys(results).length
