@@ -10,7 +10,7 @@ import { revalidatePath } from "next/cache";
 export default async function Page() {
 
     revalidatePath("/api/federated/v1/clubs");
-    const data = await fetch('http://localhost:3001/api/federated/v1/clubs').then((res) =>
+    const data = await fetch('https://ftapa.com/api/federated/v1/clubs').then((res) =>
         res.json()
     )
     console.log(data)

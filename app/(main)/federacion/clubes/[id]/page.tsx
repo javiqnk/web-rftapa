@@ -11,7 +11,7 @@ export default async function Component({
   params: { id: string }
 }) {
   revalidatePath('/api/federated/v1/club/' + id)
-  const dataApi = await fetch('http://localhost:3001/api/federated/v1/club/' + id).then((res) =>
+  const dataApi = await fetch('https://ftapa.com/api/federated/v1/club/' + id).then((res) =>
     res.json()
   )
 
